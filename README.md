@@ -11,11 +11,3 @@
 | | | | |
 
 6. 참고 자료
-
-- 원본 미션 브리프: `codyssey_ai_native_AI 도구 학습_LLM 기반 업무 자동화.pdf`
-- Git/GitHub 사용법: `GitHub_사용법.md` (Pro Git 기반 실습 가이드)
-
-7. 라이선스 및 기여
-
-- 본 저장소는 교육 과정 제출용이며 별도 라이선스를 명시하지 않는다.
-- 기여(Contributing) 규칙이 필요할 경우 `CONTRIBUTING.md`를 추가한다.
