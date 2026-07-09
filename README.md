@@ -1,7 +1,7 @@
 1. LLM 모델 비교·선정 보고서
 2. 시스템 설계 문서 (입력 템플릿 · 페르소나 · 시스템 프롬프트 · Few-shot · 단계적 추론 · 환각 검증)
 3. 실행 로그 (10턴 이상 대화)
-   3-1. low 데이터
+3-1. low 데이터
    Gemini Advanced(3.1 Pro) https://share.gemini.google/nHqRdkQdRufm 
 
 5. 보너스 과제 (2 멀티모달 확장)
