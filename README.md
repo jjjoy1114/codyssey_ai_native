@@ -13,6 +13,10 @@
 * **핵심 가치:** 전문 용어 배제, 공감형 어조를 통한 심리적 안정감 제공, 즉각 실행 가능한 단계별 가이드
 * **주요 검증 항목:** 환각 방지(존재하지 않는 기능 거부), 멀티턴 문맥 유지(업종 기억), 심리적 안정(실수 안심시키기)
 
+---
+
+과제 링크 
+https://docs.google.com/document/d/1c8F3S7ICY3IYzHHsDjEsQUr98Q_ZXWWxXpvfFbgR9XQ/edit?usp=sharing
 ----
 
 ## 🛠️ 핵심 성공 요인 (Key Insights)
