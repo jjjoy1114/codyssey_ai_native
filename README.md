@@ -16,7 +16,8 @@
 ---
 
 과제 링크 
-https://docs.google.com/document/d/1c8F3S7ICY3IYzHHsDjEsQUr98Q_ZXWWxXpvfFbgR9XQ/edit?usp=sharing
+[https://docs.google.com/document/d/1c8F3S7ICY3IYzHHsDjEsQUr98Q_ZXWWxXpvfFbgR9XQ/edit?usp=sharing](https://drive.google.com/drive/folders/1cEa_3UGmciK3DHzXJXMC9_j65c5azzSW?usp=sharing)
+
 ----
 
 ## 🛠️ 핵심 성공 요인 (Key Insights)
