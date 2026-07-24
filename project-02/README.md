@@ -92,7 +92,7 @@
 
 <img width="718" height="657" alt="스크린샷 2026-07-23 164645" src="https://github.com/user-attachments/assets/0e9a7072-51a9-497e-9b82-7d30799abb79" />
 
-* **파일명**: `lithos_smartphone_stand.mp4`
+* **파일명**: [`lithos_smartphone_stand.mp4`](https://drive.google.com/file/d/1VFILljtwa4tha_ynODBvgKLWpF7DZ6gZ/view?usp=sharing)
 * **길이**: 10초
 * **해상도**: 1920x1080
 * **프레임레이트**: 30fps
