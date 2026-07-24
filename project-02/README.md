@@ -45,7 +45,7 @@
 * **프롬프트 및 AI 활용 전략**:
   * 네이토에 있는 지피티, 클로드, 제미나이를 이용해 이미지 생성을 위한 프롬프트 작성까지는가능하지만 이미지와 영상 생성을 테스트한 결과 영상제작에 큰 어려움이 있어 유료 결제로 사용하고 있는 Gemini(Flow)를 위주로 이미지와 영상을 생성.
   * ChatGPT를 대안으로 준비.
-  * TTS 생성은 구글 AI 스튜디오를 사용 링크 (https://aistudio.google.com/generate-speech?model=gemini-3.1-flash-tts-preview)
+  * [TTS 생성은 구글 AI 스튜디오를 사용](https://aistudio.google.com/generate-speech?model=gemini-3.1-flash-tts-preview) 
      
 * **일관성 (캐릭터/제품) 유지 팁**: 
   * 플로우 캐릭터 고정 기능 이용.
