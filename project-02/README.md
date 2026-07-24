@@ -44,7 +44,7 @@
   * '제품을 접어 주머니에 넣는' 구체적인 모션을 텍스트로 정교하게 묘사해 생성하기 위해 선택함.
 * **오디오 생성 도구 (ElevenLabs & Gemini)**: 
   * ElevenLabs 무료 기능을 이용해 SFX 사운드를 만들고, Gemini로 BGM을 만들어서 사용.
-  * [제미나이로 bgm 제작 링크](https://share.gemini.google/TNV6k2dPdUma)
+  * [제미나이로 bgm 제작](https://share.gemini.google/TNV6k2dPdUma)
 * **프롬프트 및 AI 활용 전략**:
   * 네이토에 있는 지피티, 클로드, 제미나이를 이용해 이미지 생성을 위한 프롬프트 작성까지는가능하지만 이미지와 영상 생성을 테스트한 결과 영상제작에 큰 어려움이 있어 유료 결제로 사용하고 있는 Gemini(Flow)를 위주로 이미지와 영상을 생성.
   * ChatGPT를 대안으로 준비.
