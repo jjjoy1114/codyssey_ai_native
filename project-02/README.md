@@ -88,6 +88,8 @@
 
 ## 6. 최종 영상 파일 정보
 
+<img width="718" height="657" alt="스크린샷 2026-07-23 164645" src="https://github.com/user-attachments/assets/0e9a7072-51a9-497e-9b82-7d30799abb79" />
+
 * **파일명**: `lithos_smartphone_stand.mp4`
 * **길이**: 10초
 * **해상도**: 1920x1080
