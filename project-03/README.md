@@ -1,11 +1,11 @@
-# 프로젝트 3: Google Forms 설문 응답 자동 저장 및 조건별 알림
+# 프로젝트 3 노코드 자동화 기초 : 워크플로우 설계 
 
 ## 과제 구분
 
-- 과정명: AI Native Basic
-- 과제명: 자유 주제 자동화 설계 및 구현
-- 자동화 주제: 교육 프로그램 만족도 설문 자동 분류 및 알림
-- 사용 예정 도구: Google Forms, Google Sheets, Make, Gmail
+- 과정명: AI Native Basic 
+- 과제명: 자동화 도구 비교 및 자동화 설계와 구현
+- 자동화 주제: 교육 프로그램 만족도 설문 자동 분류 및 알림(Google Forms 설문 응답 자동 저장 및 조건별 알림)
+- 사용 예정 도구: Google Forms, Google Sheets, Make,Zapier, Gmail
 
 ---
 
