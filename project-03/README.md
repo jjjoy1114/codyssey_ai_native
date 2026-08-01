@@ -203,10 +203,60 @@ Zapier 무료 플랜에서는 여러 조건을 나누는 Paths 기능을 사용�
 | 상담 요청 `아니요`, 만족도 2점 | 낮은 만족도 메일 발송 성공 |
 | 두 Zap 활성화 상태 | 정상 작동 확인 |
 
-### 주요 구현 화면
+### Zapier 전체 자동화 구성
 
-![Zapier 상담 요청 자동화](./images/Zapier%20최종%20이미지/09_counseling_request_zap_workflow.png)
-![Zapier 화면 설명](./images/Zapier%20최종%20이미지/실제_파일명.png)
+Zapier 무료 플랜에서는 Paths 기능을 사용할 수 없어, 조건별로 두 개의 Zap을 각각 구성하였다.
+
+- 상담 요청이 `예`인 경우: 상담 요청 알림 이메일 발송
+- 만족도가 `2점 이하`인 경우: 낮은 만족도 알림 이메일 발송
+
+#### 1. Google Sheets 트리거 계정 연결
+
+![Google Sheets 트리거 계정 연결](./images/Zapier%20최종%20이미지/01_google_sheets_trigger_account.png)
+
+#### 2. 설문 응답 스프레드시트 및 워크시트 선택
+
+![설문 응답 스프레드시트 및 워크시트 선택](./images/Zapier%20최종%20이미지/02_select_spreadsheet_and_worksheet.png)
+
+#### 3. Google Sheets 트리거 테스트
+
+![Google Sheets 새 응답 감지 트리거 테스트](./images/Zapier%20최종%20이미지/03_test_google_sheets_trigger.png)
+
+#### 4. 자동화 테스트용 설문 응답 선택
+
+![자동화 테스트용 설문 응답 선택](./images/Zapier%20최종%20이미지/04_select_test_record.png)
+
+#### 5. Gmail 알림 이메일 본문 매핑
+
+![설문 응답 데이터와 Gmail 본문 필드 매핑](./images/Zapier%20최종%20이미지/05_email_body_field_mapping.png)
+
+#### 6. 조건별 Zap 2개 활성화
+
+![상담 요청 및 낮은 만족도 Zap 활성화](./images/Zapier%20최종%20이미지/06_two_zaps_active.png)
+
+#### 7. 상담 요청 응답 필터 설정
+
+![상담 요청이 예인 응답 필터 설정](./images/Zapier%20최종%20이미지/07_counseling_request_filter.png)
+
+#### 8. 낮은 만족도 응답 필터 설정
+
+![만족도 2점 이하 응답 필터 설정](./images/Zapier%20최종%20이미지/08_low_satisfaction_filter.png)
+
+#### 9. 상담 요청 알림 Zap 전체 구성
+
+![상담 요청 알림 Zap 전체 워크플로우](./images/Zapier%20최종%20이미지/09_counseling_request_zap_workflow.png)
+
+#### 10. 낮은 만족도 알림 Zap 전체 구성
+
+![낮은 만족도 알림 Zap 전체 워크플로우](./images/Zapier%20최종%20이미지/10_low_satisfaction_zap_workflow.png)
+
+#### 11. 상담 요청 알림 이메일 수신 결과
+
+![상담 요청 알림 이메일 수신 결과](./images/Zapier%20최종%20이미지/11_counseling_request_email_received.png)
+
+#### 12. 낮은 만족도 알림 이메일 수신 결과
+
+![낮은 만족도 알림 이메일 수신 결과](./images/Zapier%20최종%20이미지/12_low_satisfaction_email_received.png)
 
 ## 9. Make와 Zapier 비교
 
