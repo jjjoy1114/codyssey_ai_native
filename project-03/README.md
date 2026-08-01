@@ -82,21 +82,25 @@ Zapier에서는 다중 분기 기능인 Paths가 유료 플랜에서 제공되�
 ```mermaid
 flowchart TD
     A[Google Form 설문 제출] --> B[Google Sheets 자동 저장]
-    B --> C[Make 시나리오]
-    B --> D[Zapier Zap 2개]
+    B --> C[Make: 새 응답 감지]
+    C --> D{Router 조건 확인}
 
-    C --> E{Router 조건 확인}
-    E -->|상담 요청 예| F[상담 요청 메일]
-    E -->|만족도 2점 이하| G[낮은 만족도 메일]
-    C --> H[NVIDIA AI 응답 요약]
-    H --> I[AI 요약 메일]
-
-    D --> J[상담 요청 Zap]
-    D --> K[낮은 만족도 Zap]
-    J --> L[상담 요청 메일]
-    K --> M[낮은 만족도 메일]
+    D -->|상담 요청 = 예| E[상담 요청 메일 발송]
+    D -->|상담 요청 = 예 · 보너스 과제| F[NVIDIA AI 응답 내용 요약]
+    F --> G[AI 요약이 포함된 상담 요청 메일 발송]
 ```
 
+```mermaid
+flowchart TD
+    A[Google Form 설문 제출] --> B[Google Sheets 자동 저장]
+    B --> C[Zapier: 새 응답 감지]
+
+    C --> D{Zap 1 조건}
+    D -->|상담 요청 = 예| E[상담 요청 메일 발송]
+
+    C --> F{Zap 2 조건}
+    F -->|만족도 2점 이하| G[낮은 만족도 알림 메일 발송]
+```
 
 ## 7. Make 구현 결과
 
