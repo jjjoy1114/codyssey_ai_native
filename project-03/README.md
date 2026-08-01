@@ -120,7 +120,7 @@ flowchart TD
 Make의 `Google Sheets - Watch New Rows` 모듈을 시작점으로 설정하였다.  
 
 ### 전체 자동화 구성
-![Make 최종 시나리오](./images/Make%20최종%20이미지/12_make_final_scenario.png)
+[Make 최종 시나리오](./images/Make%20최종%20이미지/12_make_final_scenario.png)
 ![Make 구글 폼 시트 연결](./images/Make%20최종%20이미지/01_google_form_consultation_branch.png) 
 ![Make 화면 설명](./images/Make%20최종%20이미지/02_google_form_response_sheet.png)
 ![Make 화면 설명](./images/Make%20최종%20이미지/03_make_watch_new_rows_setting.png)
