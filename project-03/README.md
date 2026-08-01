@@ -79,6 +79,7 @@ Zapier에서는 다중 분기 기능인 Paths가 유료 플랜에서 제공되�
 
 ## 6. 워크플로우
 
+Make
 ```mermaid
 flowchart TD
     A[Google Form 설문 제출] --> B[Google Sheets 자동 저장]
@@ -90,6 +91,7 @@ flowchart TD
     F --> G[AI 요약이 포함된 상담 요청 메일 발송]
 ```
 
+Zapier
 ```mermaid
 flowchart TD
     A[Google Form 설문 제출] --> B[Google Sheets 자동 저장]
