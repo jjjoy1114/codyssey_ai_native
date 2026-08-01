@@ -100,6 +100,11 @@ flowchart TD
 
 ## 7. Make 구현 결과
 
+
+
+### 조건별 분기 설정
+
+
 ### Make 시나리오 구성
 
 1. Google Sheets의 신규 응답 감지
@@ -113,11 +118,13 @@ flowchart TD
 ### 구현 방식
 
 Make의 `Google Sheets - Watch New Rows` 모듈을 시작점으로 설정하였다.  
-Router에서 상담 요청과 낮은 만족도 조건을 각각 확인하고, 조건에 해당하는 경우 담당자에게 이메일을 발송하도록 구성하였다.
 
-기본 자동화에 NVIDIA AI 연동 기능을 추가하여 응답자가 작성한 개선사항을 간단한 요약문으로 변환하고, 담당자가 긴 응답을 빠르게 확인할 수 있도록 하였다.
+### 전체 자동화 구성
+![Make 최종 시나리오](./images/Make%20최종%20이미지/12_make_final_scenario.png)
+![Make 화면 설명](./images/Make%20최종%20이미지/01_google_form_consultation_branch.png)
+![Zapier 화면 설명](./images/Zapier%20최종%20이미지/02_google_form_response_sheet.png)
 
-## 8. Zapier 구현 결과
+Rou 8. Zapier 구현 결과
 
 ### 구현 방식
 
@@ -143,6 +150,12 @@ Zapier 무료 플랜에서는 여러 조건을 나누는 Paths 기능을 사용�
 | 상담 요청 `예`, 만족도 3점 | 상담 요청 메일 발송 성공 |
 | 상담 요청 `아니요`, 만족도 2점 | 낮은 만족도 메일 발송 성공 |
 | 두 Zap 활성화 상태 | 정상 작동 확인 |
+
+### 주요 구현 화면
+
+![Zapier 상담 요청 자동화](./images/Zapier%20최종%20이미지/09_counseling_request_zap_workflow.png)
+
+![Zapier 화면 설명](./images/Zapier%20최종%20이미지/실제_파일명.png)
 
 ## 9. Make와 Zapier 비교
 
