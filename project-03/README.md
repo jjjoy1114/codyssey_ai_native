@@ -119,19 +119,55 @@ flowchart TD
 
 Make의 `Google Sheets - Watch New Rows` 모듈을 시작점으로 설정하였다.  
 
-### 전체 자동화 구성
-[Make 최종 시나리오](./images/Make%20최종%20이미지/12_make_final_scenario.png)
-![Make 구글 폼 시트 연결](./images/Make%20최종%20이미지/01_google_form_consultation_branch.png) 
-![Make 화면 설명](./images/Make%20최종%20이미지/02_google_form_response_sheet.png)
-![Make 화면 설명](./images/Make%20최종%20이미지/03_make_watch_new_rows_setting.png)
-![Make 화면 설명](./images/Make%20최종%20이미지/04_make_watch_new_rows_success.png)
-![Make 화면 설명](./images/Make%20최종%20이미지/05_make_router_added.png)
-![Make 화면 설명](./images/Make%20최종%20이미지/06_filter_consultation_request.png)
-![Make 화면 설명](./images/Make%20최종%20이미지/07_gmail_consultation_mapping.png)
-![Make 화면 설명](./images/Make%20최종%20이미지/08_consultation_email_received.png)
-![Make 화면 설명](./images/Make%20최종%20이미지/09_filter_low_satisfaction.png)
-![Make 화면 설명](./images/Make%20최종%20이미지/10_low_satisfaction_email_received.png)
-![Make 화면 설명](./images/Make%20최종%20이미지/11_two_notification_emails_received.png)
+### Make 전체 자동화 구성
+
+#### 1. 상담 요청 조건이 포함된 Google Form
+
+![상담 요청 조건이 포함된 Google Form](./images/Make%20최종%20이미지/01_google_form_consultation_branch.png)
+
+#### 2. Google Form 응답이 저장된 Google Sheets
+
+![Google Form 응답이 저장된 Google Sheets](./images/Make%20최종%20이미지/02_google_form_response_sheet.png)
+
+#### 3. Google Sheets 새 응답 감지 모듈 설정
+
+![Google Sheets 새 응답 감지 모듈 설정](./images/Make%20최종%20이미지/03_make_watch_new_rows_setting.png)
+
+#### 4. Google Sheets 새 응답 감지 테스트 성공
+
+![Google Sheets 새 응답 감지 테스트 성공](./images/Make%20최종%20이미지/04_make_watch_new_rows_success.png)
+
+#### 5. 조건별 처리를 위한 Router 추가
+
+![조건별 처리를 위한 Router 추가](./images/Make%20최종%20이미지/05_make_router_added.png)
+
+#### 6. 상담 요청 응답 필터 설정
+
+![상담 요청이 예인 응답 필터 설정](./images/Make%20최종%20이미지/06_filter_consultation_request.png)
+
+#### 7. 상담 요청 이메일 내용 매핑
+
+![상담 요청 알림 이메일 내용 매핑](./images/Make%20최종%20이미지/07_gmail_consultation_mapping.png)
+
+#### 8. 상담 요청 이메일 수신 결과
+
+![상담 요청 알림 이메일 수신 결과](./images/Make%20최종%20이미지/08_consultation_email_received.png)
+
+#### 9. 낮은 만족도 응답 필터 설정
+
+![만족도 2점 이하 응답 필터 설정](./images/Make%20최종%20이미지/09_filter_low_satisfaction.png)
+
+#### 10. 낮은 만족도 이메일 수신 결과
+
+![낮은 만족도 알림 이메일 수신 결과](./images/Make%20최종%20이미지/10_low_satisfaction_email_received.png)
+
+#### 11. 두 조건 동시 충족 테스트 결과
+
+![두 조건 동시 충족 시 알림 이메일 수신 결과](./images/Make%20최종%20이미지/11_two_notification_emails_received.png)
+
+#### 12. Make 기본 자동화 최종 시나리오
+
+![Make 기본 자동화 최종 시나리오](./images/Make%20최종%20이미지/12_make_final_scenario.png)
 
 
 ## 8. Zapier 구현 결과
