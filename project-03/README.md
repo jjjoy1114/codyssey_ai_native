@@ -315,6 +315,30 @@ Make와 Zapier를 동일한 Google Sheets에 연결하고, Google Form 응답 �
 
 HTTP 모듈의 JSON 본문 구성 과정에서 문자열 매핑 오류가 발생했으나, 요청 형식과 매핑값을 수정하여 최종적으로 AI 요약문이 포함된 이메일 발송에 성공하였다.
 
+#### 1. NVIDIA AI 모델 및 프롬프트 설정
+
+![NVIDIA AI 모델 및 프롬프트 설정](./images/NVIDIA%20최종%20이미지/01_nvidia_http_request_model_prompt.png)
+
+#### 2. Google Form 설문 응답 데이터 매핑
+
+![NVIDIA API에 설문 응답 데이터 매핑](./images/NVIDIA%20최종%20이미지/02_nvidia_http_request_survey_mapping.png)
+
+#### 3. NVIDIA AI가 포함된 Make 시나리오 실행 성공
+
+![NVIDIA AI가 포함된 Make 시나리오 실행 성공](./images/NVIDIA%20최종%20이미지/03_make_bonus_workflow_success.png)
+
+#### 4. NVIDIA AI 응답 요약 결과 생성
+
+![NVIDIA AI 응답 요약 결과](./images/NVIDIA%20최종%20이미지/04_nvidia_ai_response_output.png)
+
+#### 5. NVIDIA API 응답과 Gmail 본문 연결
+
+![NVIDIA API 응답과 Gmail 본문 매핑](./images/NVIDIA%20최종%20이미지/05_http_200_gmail_content_mapping.png)
+
+#### 6. AI 요약 이메일 수신 결과
+
+![NVIDIA AI 요약 이메일 수신 결과](./images/NVIDIA%20최종%20이미지/06_ai_summary_email_result.png)
+
 ## 12. 구현 중 발생한 문제와 해결 방법
 
 | 문제 | 원인 | 해결 방법 |
