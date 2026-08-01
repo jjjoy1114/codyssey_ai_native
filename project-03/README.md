@@ -1,4 +1,4 @@
-# Project 03. Google Form 기반 프로그램 만족도 조사 및 상담 신청 자동화
+# Project 03. Google Form 기반 프로그램 만족도 조사 및 상담 신청 노코드 자동화
 
 ## 1. 프로젝트 개요
 
