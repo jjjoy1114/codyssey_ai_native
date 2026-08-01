@@ -1,4 +1,3 @@
-# Project 03
 # Project 03. Google Form 기반 프로그램 만족도 조사 및 상담 신청 자동화
 
 ## 1. 프로젝트 개요
@@ -77,9 +76,10 @@
 Make에서는 Router를 이용해 조건별 경로를 구성하였다.
 
 Zapier에서는 다중 분기 기능인 Paths가 유료 플랜에서 제공되기 때문에, 무료 플랜에서 동일한 Google Sheets를 감지하는 Zap을 두 개로 나누어 구현하였다.
+
 ## 6. 워크플로우
 
-
+```mermaid
 flowchart TD
     A[Google Form 설문 제출] --> B[Google Sheets 자동 저장]
     B --> C[Make 시나리오]
@@ -95,6 +95,7 @@ flowchart TD
     D --> K[낮은 만족도 Zap]
     J --> L[상담 요청 메일]
     K --> M[낮은 만족도 메일]
+```
 
 
 ## 7. Make 구현 결과
@@ -120,7 +121,7 @@ Router에서 상담 요청과 낮은 만족도 조건을 각각 확인하고, �
 
 ### 구현 방식
 
-Zapier 무료 플랜에서는 여러 조건을 나누는 Paths 기능을 사용할 수 있어, 동일한 Google Sheets를 감지하는 Zap을 두 개로 구성하였다.
+Zapier 무료 플랜에서는 여러 조건을 나누는 Paths 기능을 사용할 수 없어, 동일한 Google Sheets를 감지하는 Zap을 두 개로 구성하였다.
 
 | Zap | Filter 조건 | 실행 결과 |
 |---|---|---|
