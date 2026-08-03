@@ -30,13 +30,16 @@ codyssey_ai_native
 
 ---
 
+
+
+
 # 📋 Projects
 
-| Project    | 제목                                           | 주요 기술                                                       | 상태            |
-| ---------- | -------------------------------------------- | ----------------------------------------------------------- | ------------- |
-| Project 01 | AI 도구 학습                                     | ChatGPT, GitHub                                             | ✅ 완료          |
-| Project 02 | 멀티모달 AI 활용 |                            | ✅ 완료 |
-| Project 03 | 노코드 자동화 워크플로우 (Google Forms · Make · Zapier) | Google Forms, Google Sheets, Make, Zapier, Gmail, NVIDIA AI | ✅ 완료          |
+| 프로젝트 | 문제 | 구현 내용 | 핵심 성과 |
+|---|---|---|---|
+| Project 01 | 소상공인의 디지털 활용 장벽 | LLM 기반 단계별 가이드 챗봇 | 환각 방지·문맥 유지·무료 환경 재현 |
+| Project 02 | 제품 광고 제작의 일관성 문제 | 멀티모달 AI 기반 10초 숏폼 광고 | 제품 원형 유지·이미지/영상/음성 통합 |
+| Project 03 | 설문 확인과 상담 분류의 반복 업무 | Make·Zapier·NVIDIA API 자동화 | 조건 분기·AI 요약·API 오류 해결 |
 
 ---
 
