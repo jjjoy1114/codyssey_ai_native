@@ -35,7 +35,7 @@ codyssey_ai_native
 | Project    | 제목                                           | 주요 기술                                                       | 상태            |
 | ---------- | -------------------------------------------- | ----------------------------------------------------------- | ------------- |
 | Project 01 | AI 도구 학습                                     | ChatGPT, GitHub                                             | ✅ 완료          |
-| Project 02 | *(프로젝트명 입력)*                                 | AI 도구 활용                                                    | 🚧 진행 예정 / 완료 |
+| Project 02 | 멀티모달 AI 활용 |                            | ✅ 완료 |
 | Project 03 | 노코드 자동화 워크플로우 (Google Forms · Make · Zapier) | Google Forms, Google Sheets, Make, Zapier, Gmail, NVIDIA AI | ✅ 완료          |
 
 ---
