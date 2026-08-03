@@ -386,7 +386,10 @@ Make 무료 플랜에서는 Google Sheets의 신규 응답을 최소 15분 간�
 
 ### 9.3 구현 결과
 
-HTTP 요청 과정에서 JSON 문자열과 매핑값 오류가 발생했으나, 요청 본문 구조와 응답 필드 매핑을 수정하여 최종적으로 HTTP 상태 코드 `200`과 AI 요약 이메일 수신을 확인하였다.
+HTTP 요청 과정에서 JSON 문자열 오류, 응답 필드 매핑 문제,
+AI 경로 필터 누락 및 낮은 `max_tokens` 설정으로 인한 빈 응답 문제가 발생하였다.
+요청 본문 구조와 필터 조건을 수정하고 `max_tokens`를 180에서 2000으로 상향한 후,
+HTTP 상태 코드 `200`, 정상적인 `message.content` 생성 및 AI 요약 이메일 수신을 확인하였다.
 
 #### 1. NVIDIA AI 모델 및 프롬프트 설정
 
@@ -521,53 +524,74 @@ Fallback route | No
 | 이메일 내용의 줄바꿈이 적용되지 않음 | Gmail 본문을 일반 텍스트 형식으로 작성 | HTML 본문과 `<br>` 태그 사용 |
 | AI 메일의 응답 출처를 확인하기 어려움 | 설문 정보와 처리 경로 표시 부족 | 이름·프로그램·만족도·상담 여부·원문·AI 요약을 함께 표시 |
 | Zapier에서 조건을 한 Zap으로 분기하기 어려움 | Paths와 다단계 Zap이 유료 기능 | 상담 요청과 낮은 만족도 Zap을 별도로 구성 |
+| AI 요약 메일 내용이 비어 있음 | 추론형 AI 모델이 `max_tokens: 180` 범위에서 reasoning에 토큰을 사용해 최종 `content`가 빈 값으로 반환됨 | HTTP 요청의 `max_tokens`를 `2000`으로 상향한 후 `message.content` 정상 생성 확인 |
 
-### AI 요약 메일이 빈칸으로 발송된 문제
+### 12.1 AI 요약 결과가 빈칸으로 발송된 문제
 
 #### 문제 상황
-Make HTTP 모듈을 통해 NVIDIA AI API를 호출한 후 Gmail로 메일을 발송하였으나,
-AI 분석 결과(content)가 빈칸으로 도착하는 문제가 발생하였다.
 
-#### 원인 분석
+Make의 HTTP 모듈을 이용해 NVIDIA AI API를 호출하고,
+응답 결과를 Gmail 본문에 연결했으나 시나리오는 성공으로 표시되면서도
+수신된 이메일의 AI 분석 결과가 빈칸으로 출력되었다.
 
-- Run once를 이용하여 HTTP Output 확인
-- Data → Choices → Message 구조 분석
-- reasoning은 생성되지만 content가 비어 있는 것을 확인
+#### 실행 기록 확인
+
+Make의 `Run once` 기능으로 시나리오를 실행한 뒤
+HTTP 모듈의 Output을 확인하였다.
+
+응답 구조는 다음과 같았다.
+
+```text
+Data
+└─ choices
+   └─ message
+      ├─ role: assistant
+      ├─ content: empty
+      └─ reasoning: 긴 추론 내용
+```
+
+HTTP 상태 코드는 정상적으로 반환되었지만,
+최종 답변이 들어가야 하는 `message.content`는 빈 값이었고
+`reasoning` 항목에는 긴 추론 과정이 생성되어 있었다.
 
 #### 원인
 
-사용한 NVIDIA Llama-3.3 Nemotron 모델은 추론(Reasoning) 기반 모델이다.
+사용한 NVIDIA Llama-3.3 Nemotron 모델은
+최종 답변을 생성하기 전에 추론 과정을 수행하는 모델이다.
 
-HTTP 요청에서 `max_tokens`를 180으로 설정하여
-추론 과정에서 대부분의 토큰을 사용하였고,
-최종 응답(content)을 생성하지 못했다.
-
-#### 해결 방법
+HTTP 요청의 최대 출력 토큰을 다음과 같이 설정한 상태였다.
 
 ```json
 "max_tokens": 180
 ```
 
-↓
+설정된 토큰 범위가 짧아 모델이 추론 과정에서 토큰을 대부분 사용하였고,
+최종 결과를 담는 `content`를 생성하기 전에 출력이 종료되었다.
+
+#### 해결 방법
+
+HTTP 요청 Body의 `max_tokens` 값을 다음과 같이 수정하였다.
 
 ```json
 "max_tokens": 2000
 ```
 
-로 수정하였다.
+수정 후 다시 `Run once`를 실행하고 HTTP Output을 확인한 결과,
+`message.content`에 AI 요약문이 정상적으로 생성되었다.
 
-#### 결과
+#### 최종 결과
 
-- message.content 정상 생성
-- Gmail AI 요약 메일 정상 출력
-- 자동화 정상 동작 확인
+구현 과정에서 JSON 요청 본문 오류, 응답 필드 매핑 오류,
+AI 경로 필터 누락, Fallback 설정 문제와
+낮은 `max_tokens` 설정으로 인한 빈 응답 문제를 발견하였다.
+각 모듈의 실행 기록과 HTTP Output을 분석하여 원인을 확인한 후,
+필터 조건·데이터 매핑·토큰 설정을 수정하고 조건별 재검증을 완료하였다.
 
 #### 배운 점
 
-- HTTP 성공만 확인해서는 충분하지 않았다.
-- Run once와 HTTP Output 분석이 문제 해결에 가장 중요했다.
-- 추론형 AI 모델은 max_tokens 설정이 매우 중요함을 확인하였다.
----
+- HTTP 상태 코드가 `200`이어도 실제 응답 필드가 정상 생성되었는지 확인해야 한다.
+- 추론형 AI 모델은 `max_tokens` 값을 지나치게 낮게 설정하면 최종 답변이 생성되지 않을 수 있다.
+- Make의 `Run once`와 각 모듈의 Input·Output 확인이 오류 원인 분석에 중요하다.
 
 ## 13. Make와 Zapier 비교
 
