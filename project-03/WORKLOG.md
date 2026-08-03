@@ -303,3 +303,76 @@ Make와 Zapier 모두 Google Sheets에 저장된 새로운 설문 응답을 정�
 현재 자동화 구현, 테스트, 캡처 정리 및 문서 작성은 완료하였다. 통합 구동 영상과 제출 전 보안·화면 검수만 남아 있다.
 
 **프로젝트 진행률: 약 90%**
+
+## 2026-08-03
+
+### README 최종 보완
+
+- Make와 Zapier 최종 자동화 흐름 및 조건 검토
+- NVIDIA AI 보너스 기능 설명 보완
+- 최종 테스트 결과 정리
+- 문제 해결(Troubleshooting) 항목 추가
+- 발표용 문서 최종 검토
+
+### NVIDIA AI API 트러블슈팅
+
+#### 문제
+
+Make HTTP 모듈을 통해 NVIDIA Llama-3.3 Nemotron 모델을 호출한 뒤 Gmail로 AI 요약 메일을 발송하도록 구성하였다.
+
+HTTP 요청은 정상적으로 성공(HTTP 200)하였지만 Gmail에서 AI 요약 내용이 빈칸으로 출력되는 문제가 발생하였다.
+
+#### 원인 분석
+
+- `Run once` 기능으로 시나리오 실행
+- HTTP 모듈 Output 확인
+- `choices → message → content`가 비어 있는 것을 확인
+- `reasoning`에는 긴 추론 내용이 생성됨
+
+원인을 분석한 결과 추론형 AI 모델의 `max_tokens`가 180으로 설정되어 있어 추론 과정에서 토큰을 대부분 사용하고 최종 응답(`content`)을 생성하지 못한 것으로 확인하였다.
+
+#### 해결
+
+HTTP 요청 Body를 수정하였다.
+
+```json
+"max_tokens": 180
+```
+
+↓
+
+```json
+"max_tokens": 2000
+```
+
+#### 결과
+
+- HTTP Status 200 정상 확인
+- `message.content` 정상 생성
+- Gmail AI 요약 메일 정상 발송
+- 빈 응답 문제 해결
+
+### 최종 검증
+
+- Google Form → Google Sheets 자동 저장 확인
+- Make Router 조건 분기 정상 확인
+- 상담 요청 AI 요약 메일 정상 발송
+- 낮은 만족도 메일 정상 발송
+- Zapier 상담 요청 메일 정상 발송
+- Zapier 낮은 만족도 메일 정상 발송
+
+### 회고
+
+이번 프로젝트를 통해 단순히 자동화를 구성하는 것뿐 아니라,
+HTTP API 응답 구조를 분석하고 AI 모델의 토큰 설정이 결과에 미치는 영향을 직접 확인하였다.
+
+또한 Make의 `Run once`와 모듈별 Output 분석을 활용하여 문제 원인을 추적하고 해결하는 경험을 할 수 있었다.
+
+## 프로젝트 완료
+
+- README.md 최종 작성 완료
+- flowchart.md 최신화 완료
+- WORKLOG.md 정리 완료
+- GitHub 이미지 및 Mermaid 렌더링 확인
+- 개인정보 및 API Key 비공개 처리 확인
+- 최종 테스트 및 발표 자료 준비 완료
