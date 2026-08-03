@@ -522,6 +522,51 @@ Fallback route | No
 | AI 메일의 응답 출처를 확인하기 어려움 | 설문 정보와 처리 경로 표시 부족 | 이름·프로그램·만족도·상담 여부·원문·AI 요약을 함께 표시 |
 | Zapier에서 조건을 한 Zap으로 분기하기 어려움 | Paths와 다단계 Zap이 유료 기능 | 상담 요청과 낮은 만족도 Zap을 별도로 구성 |
 
+### AI 요약 메일이 빈칸으로 발송된 문제
+
+#### 문제 상황
+Make HTTP 모듈을 통해 NVIDIA AI API를 호출한 후 Gmail로 메일을 발송하였으나,
+AI 분석 결과(content)가 빈칸으로 도착하는 문제가 발생하였다.
+
+#### 원인 분석
+
+- Run once를 이용하여 HTTP Output 확인
+- Data → Choices → Message 구조 분석
+- reasoning은 생성되지만 content가 비어 있는 것을 확인
+
+#### 원인
+
+사용한 NVIDIA Llama-3.3 Nemotron 모델은 추론(Reasoning) 기반 모델이다.
+
+HTTP 요청에서 `max_tokens`를 180으로 설정하여
+추론 과정에서 대부분의 토큰을 사용하였고,
+최종 응답(content)을 생성하지 못했다.
+
+#### 해결 방법
+
+```json
+"max_tokens": 180
+```
+
+↓
+
+```json
+"max_tokens": 2000
+```
+
+로 수정하였다.
+
+#### 결과
+
+- message.content 정상 생성
+- Gmail AI 요약 메일 정상 출력
+- 자동화 정상 동작 확인
+
+#### 배운 점
+
+- HTTP 성공만 확인해서는 충분하지 않았다.
+- Run once와 HTTP Output 분석이 문제 해결에 가장 중요했다.
+- 추론형 AI 모델은 max_tokens 설정이 매우 중요함을 확인하였다.
 ---
 
 ## 13. Make와 Zapier 비교
